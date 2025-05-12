@@ -1,38 +1,47 @@
-# Contact Management System Documentation
+# Contact Management System
 
-# Overview
-This project implements a basic contact management system using SQLite as the backend database. It allows users to perform various operations such as adding, deleting, and updating contacts, as well as checking if a contact exists by name. All actions are performed using a Python dictionary. The system is designed for simplicity and utilizes the command line as the user interface.
+📌 Overview----------------------------------------
+This project provides a lightweight contact management system powered by SQLite. It enables users to manage contacts through basic operations like adding, updating, deleting, and verifying contact details directly from the command line. The system is built using Python and leverages a dictionary for internal data handling alongside SQLite for persistent storage.
 
-# Database Setup
-The project uses an SQLite database named contacts.db to store contact information. The database contains a single table called contacts, with the following schema:
+🗄️ Database Setup------------------------------------
+The system uses a local SQLite database file named contacts.db.
+It contains a single table contacts with the following schema:
 
-name: The contact's name (Primary Key)
+Field	Type	Description
+name	TEXT	Contact's name (Primary Key)
+phone_number	TEXT	Contact's phone number
 
-phone_number: The contact's phone number
+⚙️ Features---------------------------------------------
+➕ Add New Contact
+->Create a new contact by providing a name and phone number. Existing entries with the same name will be overwritten.
 
-# Features
-The following operations are available for managing contacts:
+🗑️ Remove All Contacts
+->Deletes all contacts from the database.
 
-Insert Contact: Adds a new contact with a specified name and phone number. If a contact with the same name already exists, it replaces the old phone number with the new one.
+❌ Delete Specific Contact
+->Deletes a contact using their name.
 
-Clear All Contacts: Deletes all contacts from the database.
+🔁 Add or Modify Contact
+->Inserts a new contact or updates an existing contact’s phone number.
 
-Delete a Contact: Removes a contact by name.
+📄 Show All Contacts
+->Displays the complete list of contacts stored in the database.
 
-Add or Update Contact: Adds a new contact or updates the phone number of an existing one.
+🔍 Search Contact by Name
+->Checks if a contact exists by name and shows their number if found.
 
-Display All Contacts: Displays a list of all contacts in the database.
+🚪 Exit Program
+->Safely closes the database connection and exits the application.
 
-Check Contact by Name: Checks if a contact with the given name exists, and if found, displays the phone number.
+▶️ How to Use-----------------------------------------------------
+Run the Script
+->Execute the Python script to start the system.
 
-Exit: Closes the database connection and exits the program.
+Select an Option from Menu
+->A menu will display various operations. Enter the number corresponding to the desired action.
 
-# How to Use
+Follow On-Screen Prompts
+->Based on your choice, provide the necessary inputs such as name or phone number.
 
-Run the Script: Execute the Python script to start the contact management system.
-
-Select an Option: A menu will appear with different operations. Enter the number corresponding to the desired action.
-
-Perform the Operation: Depending on the selected option, follow the prompts to enter information or confirm the action.
-
-Exit: To exit the program, select option 7. This will safely close the database connection.
+Exit Gracefully
+->To exit the system, select the exit option (7). This ensures all connections are properly closed.
